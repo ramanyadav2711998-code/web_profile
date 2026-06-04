@@ -1,0 +1,824 @@
+<body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Raman Yadav | AI/ML Engineer & Educator</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #2563eb;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #e2edf2;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+            border-radius: 4px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-tag {
+            font-size: 1.2rem;
+            color: #334155;
+            margin: 0.8rem 0 1rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1.5px solid #2563eb;
+            color: #2563eb;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #eff6ff;
+            transform: translateY(-2px);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eef2ff;
+            transition: all 0.2s;
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .skill-tag {
+            background: #eef2ff;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e40af;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: 0.25s;
+            border: 1px solid #eef2ff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0.8rem 0;
+        }
+
+        .project-tech span {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .exp-card,
+        .edu-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #3b82f6;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .double-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.3rem;
+            text-align: center;
+            border: 1px solid #eef2ff;
+            transition: 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card i {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-card h4 {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            font-weight: 600;
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 760px) {
+            .double-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 0 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        .dynamic-stat {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            background: #eef2ff60;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
+            width: fit-content;
+            backdrop-filter: blur(4px);
+        }
+
+        .stat-item {
+            font-weight: 600;
+        }
+
+        .dark-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            color: #1e293b;
+        }
+
+        body.dark-theme {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .skill-card,
+        body.dark-theme .project-card,
+        body.dark-theme .exp-card,
+        body.dark-theme .edu-card,
+        body.dark-theme .contact-card {
+            background: #1e293b;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+
+        body.dark-theme .skill-tag {
+            background: #2d3a5e;
+            color: #cbd5e1;
+        }
+
+        body.dark-theme .project-tech span {
+            background: #0f172a;
+            color: #94a3b8;
+        }
+
+        body.dark-theme header {
+            background: #0f172ae6;
+            border-bottom-color: #1e293b;
+        }
+
+        body.dark-theme .nav-links a {
+            color: #cbd5e6;
+        }
+
+        body.dark-theme .contact-card p,
+        body.dark-theme .contact-card a {
+            color: #e2e8f0;
+        }
+
+        body.dark-theme .btn-outline {
+            border-color: #60a5fa;
+            color: #60a5fa;
+        }
+
+        .contact-clickable {
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .contact-clickable:active {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="nav-bar">
+                <div class="logo">Raman Yadav</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container hero">
+                <div class="hero-content">
+                    <h1>Raman Yadav</h1>
+                    <div class="hero-tag">AI & ML Engineer | Ex-PGT Physics | 9+ years mentoring 900+ students</div>
+                    <p style="max-width: 550px; margin-bottom: 0.5rem;">Passionate about building intelligent systems,
+                        recommendation engines, deep learning, and full-stack solutions. Bridging analytical physics
+                        mindset with modern AI.</p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+                    </div>
+                    <div class="dynamic-stat">
+                        <div class="stat-item"><i class="fas fa-chalkboard-user"></i> <span id="expYears">9</span>+
+                            Years Teaching</div>
+                        <div class="stat-item"><i class="fas fa-users"></i> <span id="studentCount">900</span>+ Students
+                            Mentored</div>
+                        <div class="stat-item"><i class="fas fa-project-diagram"></i> <span id="projectCount">15</span>+
+                            Projects</div>
+                    </div>
+                </div>
+                <div
+                    style="background: linear-gradient(145deg, #d9e6ff, white); border-radius: 2rem; padding: 1.8rem; text-align: center; min-width: 200px;">
+                    <i class="fas fa-brain" style="font-size: 4rem; color:#2563eb;"></i>
+                    <p style="margin-top: 0.5rem; font-weight: 500;">IIT Roorkee Certified<br>AI & ML Executive</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section - Comprehensive AI/ML skills -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Arsenal (AI/ML Focus)</h2>
+                <div class="skills-grid" id="skillsGrid"></div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured & Other Projects</h2>
+                <div class="projects-grid" id="projectsGrid"></div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button id="showAllProjectsBtn" class="btn btn-outline" style="background: white;">⟳ Show All
+                        Projects</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="exp-card">
+                    <i class="fas fa-chalkboard" style="font-size: 1.4rem; color:#2563eb; margin-right: 1rem;"></i>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0;">Physics Teacher (PGT) – 9 Years</h3>
+                        <p>Mentored 900+ students, developed strong analytical & problem-solving skills. Designed
+                            curriculum integrating computational thinking. Awarded for excellence in conceptual
+                            teaching.</p>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <i class="fas fa-microchip" style="font-size: 1.4rem; color:#2563eb; margin-right: 1rem;"></i>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0;">AI/ML Freelance & Research</h3>
+                        <p>Built end-to-end ML solutions including recommendation systems, price prediction models, and
+                            AI automation workflows. Practiced MLOps basics & prompt engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="double-col" id="educationList"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section with EXACT details provided -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Connect With Me</h2>
+                <div class="contact-grid" id="contactGrid"></div>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: #64748b;">
+                    <i class="fas fa-laptop-code"></i> Available for collaborations, freelance projects, and AI/ML
+                    opportunities
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-robot"></i> Raman Yadav | AI/ML Portfolio — Let's build intelligent solutions together</p>
+        <p id="footerDate"></p>
+    </footer>
+
+    <script>
+        // Comprehensive Resume Data with ALL AI/ML Skills and EXACT CONTACT DETAILS
+        const resumeData = {
+            skills: {
+                "Core ML & Analytics": ["Regression", "Classification", "Clustering", "Feature Engineering", "EDA", "Hypothesis Testing"],
+                "Deep Learning": ["CNN", "LSTM", "RNN", "ANN", "Transfer Learning", "TensorFlow/Keras", "PyTorch Basics"],
+                "Programming & DB": ["Python", "SQL", "NumPy", "Pandas", "Scikit-learn", "Git", "Excel", "Power BI"],
+                "MLOps & Deployment": ["Model Deployment", "Flask/FastAPI", "Docker Basics", "MLflow", "Prompt Engineering", "Automation"],
+                "Data Visualization": ["Matplotlib", "Seaborn", "Plotly", "Power BI Dashboards", "Tableau"],
+                "Full Stack & Tools": ["HTML/CSS", "JavaScript", "React Basics", "REST APIs", "Jupyter", "VS Code"]
+            },
+            featuredProjects: [
+                { name: "Netflix Recommendation System", desc: "Personalized recommendation engine using collaborative filtering & content-based approach with high accuracy.", tech: ["Python", "Pandas", "Scikit-learn", "Streamlit"] },
+                { name: "Used Bike Price Prediction", desc: "Regression model with advanced feature engineering, hyperparameter tuning, and deployed via Flask.", tech: ["Python", "Regression", "RandomForest", "Flask"] },
+                { name: "Dynamic Website (Nano)", desc: "Full-stack client project: modern frontend + backend + MongoDB integration.", tech: ["Node.js", "Express", "MongoDB", "React"] }
+            ],
+            otherProjects: [
+                "Loan Prediction Model (75-95% accuracy)", "Titanic Survival Prediction", "Breast Cancer Prediction (CNN based)",
+                "Stock Market & Time Series Analysis (LSTM)", "Power BI Dashboards (Domino's, YouTube, Gadda Electronics)",
+                "AI Automation Workflow (LLM + Python)", "Digital Identification using CNN", "Sentence Identification using LSTM",
+                "Chatbot with Transformers", "Customer Churn Prediction"
+            ],
+            education: [
+                "Executive PG Certification in AI & ML - IIT Roorkee",
+                "AI Career Accelerator - Be10x",
+                "M.Sc Physics (First Division) - Uttarakhand Open University",
+                "B.Sc (First Division) - HNB Garhwal University",
+                "12th (Science) - Army Public School"
+            ],
+            contact: {
+                email: "ramanyadav2711998@gmail.com",
+                phone: "+91 8395078207",
+                github: "https://github.com/ramanyadav2711998-code",
+                linkedin: "https://www.linkedin.com/in/raman-yadav-233230383",
+                location: "India"
+            }
+        };
+
+        // Build Skills Section
+        function buildSkills() {
+            const skillsGrid = document.getElementById("skillsGrid");
+            skillsGrid.innerHTML = "";
+            for (const [category, techList] of Object.entries(resumeData.skills)) {
+                const card = document.createElement("div");
+                card.className = "skill-card";
+                let icon = "fa-laptop-code";
+                if (category.includes("Deep")) icon = "fa-brain";
+                else if (category.includes("MLOps")) icon = "fa-cogs";
+                else if (category.includes("Visualization")) icon = "fa-chart-line";
+                else if (category.includes("Core ML")) icon = "fa-chart-simple";
+                else if (category.includes("Full Stack")) icon = "fa-code-branch";
+                card.innerHTML = `
+                <i class="fas ${icon}"></i>
+                <h3>${category}</h3>
+                <div class="skill-tags">
+                    ${techList.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                </div>
+            `;
+                skillsGrid.appendChild(card);
+            }
+        }
+
+        // Build Projects
+        let showExtraProjects = false;
+        function buildProjects(showOthers = false) {
+            const container = document.getElementById("projectsGrid");
+            container.innerHTML = "";
+            resumeData.featuredProjects.forEach(proj => {
+                const card = document.createElement("div");
+                card.className = "project-card";
+                card.innerHTML = `
+                <div class="project-icon"><i class="fas fa-star" style="color:#f59e0b;"></i></div>
+                <h3>${proj.name}</h3>
+                <p>${proj.desc}</p>
+                <div class="project-tech">
+                    ${proj.tech.map(t => `<span>${t}</span>`).join('')}
+                </div>
+            `;
+                container.appendChild(card);
+            });
+
+            if (showOthers) {
+                resumeData.otherProjects.forEach(projName => {
+                    const card = document.createElement("div");
+                    card.className = "project-card";
+                    let iconHtml = '<i class="fas fa-microchip"></i>';
+                    if (projName.toLowerCase().includes("dashboard")) iconHtml = '<i class="fas fa-chart-pie"></i>';
+                    else if (projName.toLowerCase().includes("cnn")) iconHtml = '<i class="fas fa-eye"></i>';
+                    else if (projName.toLowerCase().includes("lstm")) iconHtml = '<i class="fas fa-waveform"></i>';
+                    card.innerHTML = `
+                    <div class="project-icon">${iconHtml}</div>
+                    <h3>${projName}</h3>
+                    <p>Hands-on ML/DL solution demonstrating real-world problem solving.</p>
+                    <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>TensorFlow</span></div>
+                `;
+                    container.appendChild(card);
+                });
+            } else {
+                const teaserProjects = resumeData.otherProjects.slice(0, 3);
+                teaserProjects.forEach(projName => {
+                    const card = document.createElement("div");
+                    card.className = "project-card";
+                    card.innerHTML = `
+                    <div class="project-icon"><i class="fas fa-flask"></i></div>
+                    <h3>${projName}</h3>
+                    <p>🔍 Additional project - click 'Show All' to explore all ${resumeData.otherProjects.length}+ projects.</p>
+                    <div class="project-tech"><span>ML/DL</span><span>EDA</span></div>
+                `;
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        // Build Education
+        function buildEducation() {
+            const eduContainer = document.getElementById("educationList");
+            eduContainer.innerHTML = "";
+            resumeData.education.forEach(edu => {
+                let badge = "";
+                if (edu.includes("IIT")) badge = '<i class="fas fa-university" style="margin-right: 8px; color:#3b82f6;"></i>';
+                else if (edu.includes("First Division")) badge = '<i class="fas fa-trophy" style="color:#f97316; margin-right: 6px;"></i>';
+                const div = document.createElement("div");
+                div.className = "edu-card";
+                div.innerHTML = `<p style="margin:0; font-weight:500;">${badge} ${edu}</p>`;
+                eduContainer.appendChild(div);
+            });
+        }
+
+        // Build Contact Section with EXACT details (email, phone, github, linkedin)
+        function buildContact() {
+            const contactGrid = document.getElementById("contactGrid");
+            const contact = resumeData.contact;
+
+            // Helper to copy to clipboard
+            const copyToClipboard = (text, type) => {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert(`${type} copied to clipboard: ${text}`);
+                }).catch(() => {
+                    alert(`Could not copy. Here is the ${type}: ${text}`);
+                });
+            };
+
+            contactGrid.innerHTML = `
+            <div class="contact-card contact-clickable" onclick="copyToClipboard('${contact.email}', 'Email')">
+                <i class="fas fa-envelope"></i>
+                <h4>Email (Click to copy)</h4>
+                <p>${contact.email}</p>
+            </div>
+            <div class="contact-card contact-clickable" onclick="copyToClipboard('8395078207', 'Phone')">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Phone / WhatsApp (Click to copy)</h4>
+                <p>${contact.phone}</p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-github"></i>
+                <h4>GitHub</h4>
+                <a href="${contact.github}" target="_blank">${contact.github.replace('https://github.com/', '')}</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h4>LinkedIn</h4>
+                <a href="${contact.linkedin}" target="_blank">linkedin.com/in/raman-yadav-233230383</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Location</h4>
+                <p>${contact.location}</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h4>Availability</h4>
+                <p>Open for freelance & full-time roles</p>
+            </div>
+        `;
+        }
+
+        // Global copy function
+        window.copyToClipboard = (text, type) => {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`${type} copied to clipboard: ${text}`);
+            }).catch(() => {
+                alert(`Could not copy. Here is the ${type}: ${text}`);
+            });
+        };
+
+        // Stats update
+        function updateDynamicStats() {
+            document.getElementById("expYears").innerText = "9";
+            document.getElementById("studentCount").innerText = "900";
+            const totalProjects = resumeData.featuredProjects.length + resumeData.otherProjects.length;
+            document.getElementById("projectCount").innerText = totalProjects;
+        }
+
+        // Navigation & Interactions
+        function setActiveNav() {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
+            });
+        }
+
+        function smoothScroll() {
+            document.querySelectorAll(".nav-link").forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetElem = document.getElementById(targetId);
+                    if (targetElem) targetElem.scrollIntoView({ behavior: "smooth", block: "start" });
+                    history.pushState(null, null, `#${targetId}`);
+                });
+            });
+        }
+
+        // Theme Toggle
+        function addThemeToggle() {
+            const headerDiv = document.querySelector(".nav-bar");
+            const toggleBtn = document.createElement("button");
+            toggleBtn.className = "dark-toggle";
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            toggleBtn.addEventListener("click", () => {
+                document.body.classList.toggle("dark-theme");
+                const isDark = document.body.classList.contains("dark-theme");
+                toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            });
+            headerDiv.appendChild(toggleBtn);
+        }
+
+        // Project Toggle
+        function initProjectToggle() {
+            const toggleBtn = document.getElementById("showAllProjectsBtn");
+            let expanded = false;
+            toggleBtn.addEventListener("click", () => {
+                expanded = !expanded;
+                buildProjects(expanded);
+                toggleBtn.textContent = expanded ? "⬆ Show Less (Featured only)" : `⟳ Show All Projects (${resumeData.otherProjects.length} others)`;
+            });
+            buildProjects(false);
+        }
+
+        function setFooterDate() {
+            document.getElementById("footerDate").innerHTML = `© ${new Date().getFullYear()} Raman Yadav — AI/ML Engineer • All skills & contact live`;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            buildSkills();
+            buildEducation();
+            buildContact();
+            updateDynamicStats();
+            initProjectToggle();
+            smoothScroll();
+            setFooterDate();
+            addThemeToggle();
+            window.addEventListener("scroll", setActiveNav);
+            if (window.location.hash) {
+                const id = window.location.hash.substring(1);
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    </script>
+</body>
+
+</html>
